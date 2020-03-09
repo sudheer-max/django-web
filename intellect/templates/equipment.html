@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% include "header.html" %}
+
+{% block equipment %}
+
+ 
+    <!--Section: Content-->
+    <section class="white-text" style="height: 260px; background-color: rgb(133, 82, 251); text-align: center; padding: 100px; font-weight: bold; ; margin-top: 60px; ">
+
+      <h3 class="" style="font-size: 3rem">CLEAN ROOM EQUIPMENTS</h3>
+
+    </section>
+    <!--Section: Content-->
+
+
+
+
+  <div class="container mt-4">
+    <div class="row">
+    {% for equipment in equipment_list %}
+      <div class="col-lg-4 col-md-4 col-12">
+      
+            <!-- Card -->
+        <div class="card mb-4">
+  
+          <!--Card image-->
+          <div class="view overlay">
+            <img class="card-img-top img-fluid" src="{{ equipment.image.url }}"
+              alt="Card image cap">
+            <a href="{{ equipment.get_equipmentDetail_url }}">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+  
+          <!--Card content-->
+          <div class="card-body">
+  
+            <!--Title-->
+            <h4 class="card-title">{{ equipment.title }}</h4>
+            <!--Text-->
+            <p class="card-text">{{ equipment.post_short_description }}</p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <a href="{{ equipment.get_equipmentDetail_url }}" class="btn btn-light-blue btn-md">Read more</a>
+  
+          </div>
+  
+        </div>
+        <!-- Card -->
+    
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock equipment %}

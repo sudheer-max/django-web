@@ -1,0 +1,103 @@
+{% block navbar %}
+{% load static %}
+<style>
+
+  html,
+  body,
+  header,
+  .view {
+    height: 100%;
+  }
+
+  @media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .view {
+      height: 1100px;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .view {
+      height: 700px;
+    }
+  }
+
+  .top-nav-collapse {
+    background-color: white !important;
+  }
+
+  .navbar:not(.top-nav-collapse) {
+    background: white !important;
+  }
+
+  @media (max-width: 991px) {
+   .navbar:not(.top-nav-collapse) {
+    background: white !important;
+   }
+  }
+
+  h6 {
+    line-height: 1.7;
+  }
+
+</style>
+
+<!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'intellect:home' %}">
+        <img src="{% static 'image/logo.png' %}" class="img-fluid" style="height: 60px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+        {% url 'intellect:home' as home %}
+        {% url 'intellect:hvac' as hvac %}
+        {% url 'intellect:door' as door %}
+        {% url 'intellect:equipment' as equipment %}
+        {% url 'intellect:metal' as metal %}
+        {% url 'contact' as contact %}
+
+          <li {% if request.path == home %} class="nav-item active" {% endif %}>
+            <a class="nav-link" href="{% url 'intellect:home' %}">HOME</a>
+          </li>
+          <li  {% if request.path == hvac %} class="nav-item active " {% endif %}>
+            <a class="nav-link" href="{% url 'intellect:hvac' %}">HVAC</a>
+          </li>
+          <li {% if request.path == door %} class="nav-item active" {% endif %}>
+            <a class="nav-link" href="{% url 'intellect:door' %}">CLEAN ROOM DOOR</a>
+          </li>
+          <li {% if request.path == equipment %} class="nav-item active" {% endif %}>
+            <a class="nav-link" href="{% url 'intellect:equipment' %}">CLEAN ROOM EQUIPMENTS</a>
+          </li>
+        </li>
+        <li {% if request.path == metal %} class="nav-item active" {% endif %}>
+          <a class="nav-link" href="{% url 'intellect:metal' %}">METAL FURNITURE’S</a>
+        </li>
+          <li {% if request.path == contact %} class="nav-item active" {% endif %}>
+            <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+          </li>
+
+          <!-- Dropdown -->
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">ACCOUNTS</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'account_login' %}">LOGIN</a>
+          <a class="dropdown-item" href="{% url 'account_signup' %}">SIGNUP</a>
+          <a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a>
+        </div> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+{% endblock navbar %}

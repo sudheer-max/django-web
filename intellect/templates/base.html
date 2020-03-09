@@ -1,0 +1,94 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>INTELLECT INNOVATION</title>
+  <mata name="description" content="Air handling Units, Clean Room Panels, Doors and Clean Room Equipment."></mata>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/extra.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    {% block navbar %}
+    {% include "navbar.html" %}
+    {% endblock navbar %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block gallery %}
+
+{% endblock gallery %}
+
+{% block contact %}
+
+{% endblock contact %}
+
+{% block products %}
+
+{% endblock products %}
+
+{% block hvac %}
+
+{% endblock hvac %}
+
+{% block hvac_detail %}
+
+{% endblock hvac_detail %}
+
+{% block door %}
+
+{% endblock door %}
+
+{% block equipment %}
+
+{% endblock equipment %}
+
+{% block metal %}
+
+{% endblock metal %}
+
+{% block content %}
+
+{% endblock content %}
+ 
+{% block footer %}
+{% include "footer.html" %}
+{% endblock footer %}
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/gallery.js' %}"></script>
+
+
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header %}
+{% include "header.html" %}
+{% endblock header %}
+
+{% block gallery %}
+<hr>
+<div class="container my-5 z-depth-1">
+
+
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+    <div class="row pr-lg-5">
+
+      <div class="col-md-7 mb-4">
+
+        <div class="view">
+          <img src="{% static 'image/Shiju.jpg' %}" style="width: 460px; height: auto; " class="img-fluid" alt="smaple image">
+        </div>
+
+      </div>
+      <div class="col-md-5 d-flex align-items-center">
+        <div>
+          <h3 class="font-weight-bold mb-4">Mr. Shiju Abraham</h3>
+        	<p>We feel humbled and appreciated to introduce ourselves as one of the leading manufacturers of Air handling Units, Clean Room Panels, Doors and Clean Room Equipment. The company Incorporated in the year, 2015 and flourished under the able and adept guidance of our Managing Director, Mr. Shiju Abraham.
+The selection of Intellect’s manufactured products by clients will prove as a step in the right direction as it can result in a number of advantages. The products are manufactured by experienced Professionals ensuring Precise, Good Quality and Professional Work.
+Our approach is firmly based on advanced technology and teamwork to ensure that every contact with Intellect is met with the highest standards. We take pride of our product quality and delivery. We continuously strive to keep our products relevant and updated adhering to the strict standards of organizations such as the ISO, FDA, USFDA, WHO, TGA, MHRDA, NABH, AND ASHRAE.</p>
+
+        	{% comment %} <button type="button" class="btn btn-orange btn-rounded mx-0">Download</button> {% endcomment %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container my-5">
+  <h2 class="text-center">INFRASTRUCTURE</h2>
+<p>We are backed by a stable infrastructure in the form of qualified, experienced and devoted employees and ultra-modern machinery, which act as a back bone for our corporate entity. Our approachable professionals from various departments of Design, Manufacturing, Installation and service are always available to provide useful guidance and assistance in opting for the best possible solution for your requirements.</p>
+<hr>
+<h4 class="text-center">Our Products are manufacturing with advance equipment’s</h4>
+</div>
+
+<div class="container">
+  <div class="row">
+  {% for post in post_list %}
+    <div class="col-lg-4 col-md-4 col-12">
+    
+          <!-- Card -->
+      <div class="card mb-4">
+
+        <!--Card image-->
+        <div class="view overlay">
+          <img class="card-img-top img-fluid" src="{{ post.post_image.url }}"
+            alt="Card image cap">
+          <a href="{{ post.get_absolute_url }}">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+          <!--Title-->
+          <h4 class="card-title">{{ post.title }}</h4>
+          <!--Text-->
+          <p class="card-text">{{ post.post_short_description }}</p>
+          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+          <a href="{{ post.get_absolute_url }}" class="btn btn-light-blue btn-md">Read more</a>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+  
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock gallery %}
+
+
+
+
+ 
