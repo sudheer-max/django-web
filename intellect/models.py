@@ -23,7 +23,7 @@ class Hvac(models.Model):
     def __str__(self):
         return self.title
 
-    def get_hvacDetail_url(self):
+    def get_absolute_url(self):
         return reverse("intellect:hvacDetail", kwargs={
             'slug' : self.slug
         })
@@ -39,7 +39,7 @@ class Door(models.Model):
     def __str__(self):
         return self.title
 
-    def get_doorDetail_url(self):
+    def get_absolutel_url(self):
         return reverse("intellect:doorDetail", kwargs={
             'slug' : self.slug
         })
@@ -54,7 +54,7 @@ class Equipment(models.Model):
     def __str__(self):
         return self.title
 
-    def get_equipmentDetail_url(self):
+    def get_absolute_url(self):
         return reverse("intellect:equipmentDetail", kwargs = {
             'slug' : self.slug
         })
@@ -69,7 +69,7 @@ class Metal(models.Model):
     def __str__(self):
         return self.title
     
-    def get_metalDetail_url(self):
+    def get_absolute_url(self):
         return reverse("intellect:metalDetail", kwargs = {
             'slug' : self.slug
         })

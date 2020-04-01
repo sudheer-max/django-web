@@ -27,7 +27,7 @@
           <div class="view overlay">
             <img class="card-img-top img-fluid" src="{{ equipment.image.url }}"
               alt="Card image cap">
-            <a href="{{ equipment.get_equipmentDetail_url }}">
+            <a href="{{ equipment.get_absolute_url }}">
               <div class="mask rgba-white-slight"></div>
             </a>
           </div>
@@ -40,7 +40,7 @@
             <!--Text-->
             <p class="card-text">{{ equipment.post_short_description }}</p>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <a href="{{ equipment.get_equipmentDetail_url }}" class="btn btn-light-blue btn-md">Read more</a>
+            <a href="{{ equipment.get_absolute_url }}" class="btn btn-light-blue btn-md">Read more</a>
   
           </div>
   

@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.shortcuts import reverse
-from .models import Hvac, Door, Equipment
+from .models import Hvac, Door
 
 class EquipmentSitemap(Sitemap):
     def items(self):

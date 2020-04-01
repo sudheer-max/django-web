@@ -27,7 +27,7 @@
           <div class="view overlay">
             <img class="card-img-top img-fluid" src="{{ door.image.url }}"
               alt="Card image cap">
-            <a href="{{ door.get_doorDetail_url }}">
+            <a href="{{ door.get_absolute_url }}">
               <div class="mask rgba-white-slight"></div>
             </a>
           </div>
@@ -40,7 +40,7 @@
             <!--Text-->
             <p class="card-text">{{ door.post_short_description }}</p>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <a href="{{ door.get_doorDetail_url }}" class="btn btn-light-blue btn-md">Read more</a>
+            <a href="{{ door.get_absolute_url }}" class="btn btn-light-blue btn-md">Read more</a>
   
           </div>
   
