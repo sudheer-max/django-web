@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 from django.contrib import admin
 from django.urls import path, include
 from contact import views as contact_views
+from intellect.sitemaps import EquipmentSitemap, DoorSitemap, HvacSitemap
+
+sitemaps = {
+   'EquipmentSitemap' : EquipmentSitemap,  'DoorSitemap' : DoorSitemap, 'HvacSitemap' : HvacSitemap
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('intellect.urls', namespace='intellect')),
+    path('sitemap.xml', sitemap, { 'sitemaps' : sitemaps}),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('contact/', contact_views.contact, name='contact'),
     path('accounts/', include('allauth.urls')),
